@@ -1,0 +1,13 @@
+#!/bin/bash
+
+find ./ -name "*.o" -delete
+	
+proglist="mix det skt lsrp msrp";
+
+for prog in $proglist; do
+	pushd $prog
+		make clean
+		rm -f ../bin/$prog
+	popd
+done
+

@@ -1,0 +1,29 @@
+#/bin/bash
+
+./clean
+
+if [ $(uname) == Darwin ]; then
+	SRP=msrp;
+elif [ $(uname) == Linux ]; then 
+	SRP=lsrp;
+else
+	echo "can't compile for $(uname)";
+	exit 1;
+fi;
+	
+proglist="mix det skt $SRP";
+
+for prog in $proglist; do
+	pushd $prog
+		make clean
+		make
+		strip $prog
+		rm -f ../bin/$prog
+		cp $prog ../bin
+	popd
+done
+
+pushd bin
+	rm -f srp
+	ln -s $SRP srp;
+popd

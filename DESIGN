@@ -1,0 +1,15 @@
+This is the basic idea.  In addition to this basic configuraion, the 
+program mix calls stat() to see if its commandline filename arguments 
+are executable.  If so, they are executed and the stdout stream of the
+resulting process serves as the input to mix for each such channel.
+
+           ___
+file_1 ---|   |
+          |   |      _________
+file_2 ---| M |     |         |       __________
+          | I |-----|   SRP   |------| new_file |
+file_3 ---| X |     |_________|      |__________| 
+          |   |       |     |  
+file_n ---|___|    ___|_   _|____
+                  | mic | | spkr |       			
+                  |_____| |______|

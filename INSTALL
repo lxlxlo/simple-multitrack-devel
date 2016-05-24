@@ -1,0 +1,20 @@
+INSTALLATION INSTRUCTIONS:
+
+Summary: 
+
+	./build
+
+The build script will try to identify what kind of machine you have
+and compile the right code for that.  Please report any compiling
+problems.
+
+The programs end up in the ./bin directory.
+Before running the programs, you might want to do this:
+	
+	cd ./bin;
+	source shellsetup;
+
+It puts the simple-multitrack programs your path.
+And it sets a tiny shell prompt string.
+
+

@@ -1,0 +1,4 @@
+#!/bin/bash
+# This command is for recording mono raw signed-word 44100 samp/s audio files.
+
+sox -t ossdsp -w -s -r 44101 /dev/dsp -c 1  -w -s -t raw $1

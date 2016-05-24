@@ -1,0 +1,5 @@
+#!/bin/bash
+# This command is for getting statistics on an audio file.
+# See the stat option in the sox man page for more info.
+
+sox -c 1 -t raw -s -w -r 44100 $1 -e  stat

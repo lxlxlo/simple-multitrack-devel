@@ -1,0 +1,5 @@
+#!/bin/bash
+
+while head -c $1 > /dev/null; do
+	echo -n ".";
+done

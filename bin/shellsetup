@@ -1,0 +1,17 @@
+# source me for convenience if you are using bash
+
+# add the simple-multitrack program an utils directories to PATH
+export PATH=$PATH:$(pwd)
+
+# a long shell prompt might get in your way
+if [ $UID == 0 ]; then
+	export PS1="# "
+else
+	export PS1="$ "
+fi
+
+function skip() { 
+	secs=$1; 
+	samps=$(echo "scale = 0; ($secs * 44100)/1" | bc); 
+	export skipsamps=$samps; 
+}

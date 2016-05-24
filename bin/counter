@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# example: mix 2 1 1 1 tuba | srp 0 | tee sax | counter 88200
+# This will count seconds of audio that have been recorded.
+# This is approximate.
+
+count=0;
+
+while head -c $1 > /dev/null; do
+	let count=$count+1;
+	echo $count time=$SECONDS;
+done

@@ -1,0 +1,4 @@
+#!/bin/bash
+# This command is for playing mono 44100 samp/sec raw signed-word audio files.
+
+sox -c 1 -t raw -s -r 44100 -w $1 -t ossdsp /dev/dsp
